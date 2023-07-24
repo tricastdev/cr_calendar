@@ -44,11 +44,11 @@ final class CrCalendarController extends ChangeNotifier {
   /// Default constructor.
   CrCalendarController({
     this.onSwipe,
-    this.events,
-  });
+    List<CalendarEventModel>? events,
+  }) : events = events ?? [];
 
   /// All calendar event currently stored by controller.
-  final List<CalendarEventModel>? events;
+  final List<CalendarEventModel> events;
 
   /// Current opened date in calendar.
   late DateTime date;
@@ -89,14 +89,14 @@ final class CrCalendarController extends ChangeNotifier {
   ValueNotifier<bool> get isShowingEvents => _doShowEvents;
 
   /// Add list of events.
-  void addEvents(List<CalendarEventModel> events) {
-    events.addAll(events);
+  void addEvents(List<CalendarEventModel> calendarEvents) {
+    events.addAll(calendarEvents);
     _redrawCalendar();
   }
 
   /// Add one event.
   void addEvent(CalendarEventModel event) {
-    events?.add(event);
+    events.add(event);
     _redrawCalendar();
   }
 
@@ -167,6 +167,11 @@ final class CrCalendarController extends ChangeNotifier {
           const Duration(milliseconds: Contract.kDefaultAnimationDurationMs),
       curve: curve ?? Curves.linear,
     );
+  }
+
+  void clearEvents() {
+    events.clear();
+    _redrawCalendar();
   }
 
   void _redrawCalendar() {

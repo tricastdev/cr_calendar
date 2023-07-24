@@ -207,7 +207,7 @@ class MonthCalendarWidgetState extends State<MonthCalendarWidget> {
 
   void _performDaySelecting(Jiffy jiffyDay) {
     final events =
-        calculateAvailableEventsForDate(_controller.events ?? [], jiffyDay);
+        calculateAvailableEventsForDate(_controller.events, jiffyDay);
 
     _controller.selectedDate = jiffyDay.dateTime;
     widget.onDaySelected?.call(events, jiffyDay);
@@ -241,7 +241,7 @@ class MonthCalendarWidgetState extends State<MonthCalendarWidget> {
 
   void _useOnRangeSelectedCallback() {
     widget.onRangeSelected?.call(calculateAvailableEventsForRange(
-      _controller.events ?? [],
+      _controller.events,
       _controller.selectedRange.begin?.toJiffy(),
       _controller.selectedRange.end?.toJiffy() ??
           _controller.selectedRange.begin?.toJiffy(),

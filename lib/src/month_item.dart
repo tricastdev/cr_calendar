@@ -271,7 +271,7 @@ class MonthItemState extends State<MonthItem> {
       final eventDrawers = resolveEventDrawersForWeek(
         widget.weeksToShow != null ? widget.weeksToShow![index] : index,
         _beginRange,
-        widget.controller.events ?? [],
+        widget.controller.events,
       );
       final placedEvents =
           placeEventsToLines(eventDrawers, widget.maxEventLines);
