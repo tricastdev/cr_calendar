@@ -6,7 +6,7 @@ import 'package:jiffy/jiffy.dart';
 /// For making [CrCalendar] constructor more readable and smaller.
 ///
 /// Used in [DayItemBuilder] typedef.
-class DayItemProperties {
+final class DayItemProperties {
   DayItemProperties({
     required this.dayNumber,
     required this.isInMonth,
