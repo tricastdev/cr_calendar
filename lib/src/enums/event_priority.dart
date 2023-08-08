@@ -1,0 +1,1 @@
+enum EventPriority { high, low }
