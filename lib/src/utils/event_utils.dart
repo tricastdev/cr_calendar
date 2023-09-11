@@ -107,6 +107,7 @@ EventProperties? _mapSimpleEventToDrawerOrNull(
     name: event.name,
     backgroundColor: event.eventColor,
     priority: event.priority,
+    requiresHighlight: event.requiresHighlight,
   );
 }
 
