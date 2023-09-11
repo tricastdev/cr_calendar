@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:cr_calendar/cr_calendar.dart';
-import 'package:cr_calendar/src/enums/event_priority.dart';
 import 'package:flutter/material.dart';
 
 final class WeekDrawer {
@@ -22,6 +21,7 @@ final class EventProperties {
     required this.name,
     required this.backgroundColor,
     required this.priority,
+    required this.requiresHighlight,
   });
 
   /// Begin day number.
@@ -36,6 +36,10 @@ final class EventProperties {
 
   /// Priority of the event; higher priority events are drawn first.
   EventPriority priority;
+
+  /// Property to signal the event drawer if a specific event or events require
+  /// some highlight.
+  bool requiresHighlight;
 
   int size() => end - begin + 1;
 }

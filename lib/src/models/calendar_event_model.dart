@@ -8,6 +8,7 @@ final class CalendarEventModel {
     required this.end,
     this.eventColor = Colors.green,
     this.priority = EventPriority.low,
+    this.requiresHighlight = false,
   });
 
   String name;
@@ -15,4 +16,5 @@ final class CalendarEventModel {
   DateTime end;
   Color eventColor;
   EventPriority priority;
+  bool requiresHighlight;
 }
