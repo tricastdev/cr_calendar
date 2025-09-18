@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
                 borderRadius: BorderRadius.all(Radius.circular(8))),
           ),
         ),
-        dialogTheme: const DialogTheme(
+        dialogTheme: const DialogThemeData(
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(12))),
         ),
